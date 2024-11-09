@@ -10,9 +10,16 @@
 	if (inst != noone) {
 	    inst.addForce(velocity * mass, vDir, 1);
 		
-//		Damage is based on the instantaneous transfer of momentum and a random multiplier
-		inst.applyDamage(velocity * mass * (minDamageMultiplier + random(maxDamageMultiplier - minDamageMultiplier)));
+//		if the target is the specified headshot target and headshot is true
+		if (inst == headshotTarget && headshot) {
+		    inst.applyDamage(velocity * mass * 2);
+		}
+		else {
+//			Damage is based on the instantaneous transfer of momentum and a random multiplier
+			inst.applyDamage(velocity * mass * (minDamageMultiplier + random(maxDamageMultiplier - minDamageMultiplier)));
+		}
 		
+
 		instance_destroy(self);
 	} // if
 //	=======

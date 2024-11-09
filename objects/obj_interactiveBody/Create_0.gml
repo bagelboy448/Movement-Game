@@ -18,6 +18,10 @@
 	collisionCoefficient = 1;
 
 	forces = [];
+	
+	xCenter = x + sprite_width / 2;
+	yCenter = y + sprite_width / 2;
+	targetRadius = 10;
 
 //	Adds a force to the interactive body. The ordered triple is 
 //	(force magnitude, force direction, frame duration)

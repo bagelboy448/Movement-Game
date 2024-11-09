@@ -12,16 +12,26 @@
 
 	minDamageMultiplier = 0;
 	maxDamageMultiplier = 0;
+	
+	headshot = false;
+	headshotTarget = noone;
 
 //	Basic object constructor
-//	=========================================================================================================================
-	function projectileParent(_mass, _velocity, _vDir, _imageAngle, _minDamageMultiplier, _maxDamageMultiplier) constructor {
+//	===============================================================
+	function projectileParent(_mass, _velocity, _vDir, _imageAngle, 
+								_minDamageMultiplier, _maxDamageMultiplier, 
+								_headshot = false, _headshotTarget = noone) constructor {
+									
 		mass = _mass;
 		velocity = _velocity;
 		vDir = _vDir;
 		image_angle = _imageAngle;
 		minDamageMultiplier = _minDamageMultiplier;
 		maxDamageMultiplier = _maxDamageMultiplier;
+		
+		headshot = _headshot;
+		headshotTarget = _headshotTarget;
+		
 	} // constructor projectileParent()
 //	===================================	
 

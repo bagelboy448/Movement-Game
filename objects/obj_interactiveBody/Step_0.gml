@@ -13,3 +13,6 @@ deccelerate();
 
 x += xVelocity;
 y += yVelocity;
+
+xCenter = x + sprite_width / 2;
+yCenter = y + sprite_width / 2;

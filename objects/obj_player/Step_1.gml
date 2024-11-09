@@ -135,8 +135,21 @@
 //	Shoot a projectile
 	if (mouse_check_button(mb_left) && shootingCounter <= 0) {
 		shootingCounter = shootingCooldown;
-		var inst = instance_create_depth(x, y, depth - 1, obj_projectileParent);
-		inst.projectileParent(0.1, 50, image_angle, image_angle, 1, 1); // projectile constructor
+		var projectile = instance_create_depth(x, y, depth - 1, obj_projectileParent);
+		
+		var targetInst = instance_nearest(mouse_x, mouse_y, obj_interactiveBody);
+		if (targetInst != noone) {
+		    if (distance(mouse_x, mouse_y, targetInst.xCenter, targetInst.yCenter) <= targetInst.targetRadius) {
+			    projectile.projectileParent(0.1, 50, image_angle, image_angle, 1, 1, true, targetInst); // projectile constructor
+			}
+			else {
+			    projectile.projectileParent(0.1, 50, image_angle, image_angle, 1, 1); // projectile constructor
+			}
+		}
+		else {
+		    projectile.projectileParent(0.1, 50, image_angle, image_angle, 1, 1); // projectile constructor
+		}
+		
 	} // if
 	else {
 		shootingCounter--;
