@@ -50,7 +50,3 @@
 		draw_text(graphStartX, graphStartY, "velocity over time");
 		
 	}
-	
-	
-	
-	
