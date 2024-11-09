@@ -28,6 +28,7 @@
     {"id":{"name":"obj_solidWall","path":"objects/obj_solidWall/obj_solidWall.yy",},},
     {"id":{"name":"room_testRoom","path":"rooms/room_testRoom/room_testRoom.yy",},},
     {"id":{"name":"distance","path":"scripts/distance/distance.yy",},},
+    {"id":{"name":"dotProduct","path":"scripts/dotProduct/dotProduct.yy",},},
     {"id":{"name":"magnitude","path":"scripts/magnitude/magnitude.yy",},},
     {"id":{"name":"scr_playerDecceleration","path":"scripts/scr_playerDecceleration/scr_playerDecceleration.yy",},},
     {"id":{"name":"scr_playerMoveAcceleration","path":"scripts/scr_playerMoveAcceleration/scr_playerMoveAcceleration.yy",},},

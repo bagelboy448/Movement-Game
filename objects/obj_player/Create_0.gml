@@ -25,10 +25,15 @@
 	velocity = 0;
 	vDir = 0;
 	
-	collisionCoefficient = 0.5;
+	collisionCoefficient = 0.75;
 	
 	grappled = false;
 	grappleX = 0;
 	grappleY = 0;
-	maxGrappleLength = 300;
+	maxGrappleLength = 200;
 	currentGrappleLength = 0;
+	grappleDistance = 0;
+	grappleDir = 0;
+	
+	debugText = false;
+	recordedVelocity = [];

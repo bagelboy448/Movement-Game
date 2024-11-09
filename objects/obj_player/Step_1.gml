@@ -34,7 +34,9 @@
 	
 //	Decceleration due to friction
 //	=============================
-	scr_playerDecceleration();
+	if (!grappled) {
+	    scr_playerDecceleration();
+	}
 //	==========================	
 	
 //	Simple collisions
@@ -52,7 +54,7 @@
 	if (mouse_check_button_pressed(mb_left)) {
 	    grappled = !grappled;
 		if (distance(x, y, mouse_x, mouse_y) > maxGrappleLength) {
-		    var grappleDir = point_direction(x, y, mouse_x, mouse_y);
+		    grappleDir = point_direction(x, y, mouse_x, mouse_y);
 			grappleX = x + lengthdir_x(maxGrappleLength, grappleDir);
 			grappleY = y + lengthdir_y(maxGrappleLength, grappleDir);
 		} // if
@@ -62,16 +64,37 @@
 		} // else
 	} // if
 //	=======
-	
+
+//	Grappled movement
+//	=================
 	if (grappled) {
-	    var grappleDir = point_direction(x, y, grappleX, grappleY);
-	}
+		vDir = point_direction(0, 0, xVelocity, yVelocity);
+		grappleDistance = distance(x, y, grappleX, grappleY);
+		grappleDir = point_direction(x, y, grappleX, grappleY);
+		if (grappleDistance > maxGrappleLength - 5 && !(vDir < grappleDir + 90 && vDir > grappleDir - 90)) {
+			var xRef = lengthdir_x(1, grappleDir + 90);
+			var yRef = lengthdir_y(1, grappleDir + 90);
+			var xVelocityTemp = xVelocity;
+			var yVelocityTemp = yVelocity;
+			xVelocity = xRef * (dotProduct(xVelocityTemp, yVelocityTemp, xRef, yRef)/dotProduct(xRef, yRef, xRef, yRef));
+			yVelocity = yRef * (dotProduct(xVelocityTemp, yVelocityTemp, xRef, yRef)/dotProduct(xRef, yRef, xRef, yRef));
+		} // if
+	} // if
+//	=======	
 	
 //	Move
 //	===============
 	x += xVelocity;
 	y += yVelocity;
 //	===============
+
+//	Correct movement to keep grapple length constant
+//	=====================================================
+	if (grappled && grappleDistance > maxGrappleLength) {
+	    x += lengthdir_x(grappleDistance - maxGrappleLength, grappleDir);
+	    y += lengthdir_y(grappleDistance - maxGrappleLength, grappleDir);
+	} // if
+// ========
 	
 //	Non-movement inputs
 //	===============================
@@ -79,6 +102,11 @@
 //	Put the player in test position
 	if (keyboard_check(vk_enter)) {
 	    scr_setPlayerStatic(100, 100);
+		grappled = false;
 	} // if
+	
+	if (keyboard_check_pressed(ord("T"))) {
+		debugText = !debugText;
+	}
 	
 //	=======	
