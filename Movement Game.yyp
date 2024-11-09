@@ -1,0 +1,48 @@
+{
+  "$GMProject":"",
+  "%Name":"Movement Game",
+  "AudioGroups":[
+    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+  ],
+  "configs":{
+    "children":[],
+    "name":"Default",
+  },
+  "defaultScriptType":1,
+  "Folders":[
+    {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
+  ],
+  "IncludedFiles":[],
+  "isEcma":false,
+  "LibraryEmitters":[],
+  "MetaData":{
+    "IDEVersion":"2024.8.1.171",
+  },
+  "name":"Movement Game",
+  "resources":[
+    {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"obj_playerOLD","path":"objects/obj_playerOLD/obj_playerOLD.yy",},},
+    {"id":{"name":"obj_solidWall","path":"objects/obj_solidWall/obj_solidWall.yy",},},
+    {"id":{"name":"room_testRoom","path":"rooms/room_testRoom/room_testRoom.yy",},},
+    {"id":{"name":"distance","path":"scripts/distance/distance.yy",},},
+    {"id":{"name":"magnitude","path":"scripts/magnitude/magnitude.yy",},},
+    {"id":{"name":"scr_playerDecceleration","path":"scripts/scr_playerDecceleration/scr_playerDecceleration.yy",},},
+    {"id":{"name":"scr_playerMoveAcceleration","path":"scripts/scr_playerMoveAcceleration/scr_playerMoveAcceleration.yy",},},
+    {"id":{"name":"scr_playerSolidWallCollisionDetection","path":"scripts/scr_playerSolidWallCollisionDetection/scr_playerSolidWallCollisionDetection.yy",},},
+    {"id":{"name":"scr_setPlayerStatic","path":"scripts/scr_setPlayerStatic/scr_setPlayerStatic.yy",},},
+    {"id":{"name":"spr_testSprite","path":"sprites/spr_testSprite/spr_testSprite.yy",},},
+    {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
+  ],
+  "resourceType":"GMProject",
+  "resourceVersion":"2.0",
+  "RoomOrderNodes":[
+    {"roomId":{"name":"room_testRoom","path":"rooms/room_testRoom/room_testRoom.yy",},},
+  ],
+  "templateType":"game",
+  "TextureGroups":[
+    {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+  ],
+}
