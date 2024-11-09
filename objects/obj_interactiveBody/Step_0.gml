@@ -1,5 +1,13 @@
 /// @description
 
+if (takeDamage) {
+	var inst = instance_create_depth(xCenter, yCenter, depth + 1, obj_groundSplatter);
+	inst.image_xscale = 1 + damageAmount/100;
+	inst.image_angle = damageDir;
+	takeDamage = false;
+	damageAmount = 0;
+}
+
 if (hp <= 0) {
 	instance_destroy(self);
 }

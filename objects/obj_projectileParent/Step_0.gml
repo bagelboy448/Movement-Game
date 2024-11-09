@@ -12,11 +12,11 @@
 		
 //		if the target is the specified headshot target and headshot is true
 		if (inst == headshotTarget && headshot) {
-		    inst.applyDamage(velocity * mass * 2);
+		    inst.applyDamage(velocity * mass * 10, vDir);
 		}
 		else {
 //			Damage is based on the instantaneous transfer of momentum and a random multiplier
-			inst.applyDamage(velocity * mass * (minDamageMultiplier + random(maxDamageMultiplier - minDamageMultiplier)));
+			inst.applyDamage(velocity * mass * (minDamageMultiplier + random(maxDamageMultiplier - minDamageMultiplier)), vDir);
 		}
 		
 

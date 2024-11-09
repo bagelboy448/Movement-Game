@@ -22,6 +22,10 @@
 	xCenter = x + sprite_width / 2;
 	yCenter = y + sprite_width / 2;
 	targetRadius = 10;
+	
+	takeDamage = false;
+	damageAmount = 0;
+	damageDir = 0;
 
 //	Adds a force to the interactive body. The ordered triple is 
 //	(force magnitude, force direction, frame duration)
@@ -52,8 +56,11 @@
 
 //	Reduces current hp by an amount
 //	===============================
-	function applyDamage(amount) {
+	function applyDamage(amount, _damageDir) {
 	    hp -= amount;
+		takeDamage = true;
+		damageAmount = amount;
+		damageDir = _damageDir;
 	} // function applyDamage()
 //	===========================
 

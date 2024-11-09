@@ -23,6 +23,7 @@
   },
   "name":"Movement Game",
   "resources":[
+    {"id":{"name":"obj_groundSplatter","path":"objects/obj_groundSplatter/obj_groundSplatter.yy",},},
     {"id":{"name":"obj_interactiveBody","path":"objects/obj_interactiveBody/obj_interactiveBody.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_playerOLD","path":"objects/obj_playerOLD/obj_playerOLD.yy",},},
@@ -40,6 +41,7 @@
     {"id":{"name":"spr_projectileParent","path":"sprites/spr_projectileParent/spr_projectileParent.yy",},},
     {"id":{"name":"spr_testSprite","path":"sprites/spr_testSprite/spr_testSprite.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
+    {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
