@@ -25,12 +25,7 @@
 	scr_playerMoveAcceleration();
 //	=============================	
 	
-//	Accelerate
-//	===========================
-	xVelocity += xAcceleration;
-	yVelocity += yAcceleration;
-	velocity = magnitude(xVelocity, yVelocity);
-//	===========================================	
+
 	
 //	Decceleration due to friction
 //	=============================
@@ -71,6 +66,14 @@
 	} // if
 //	=======
 
+	if (grappled && mouse_check_button(mb_right)) {
+	    xAcceleration += lengthdir_x(grappleAcceleration, grappleDir);
+	    yAcceleration += lengthdir_y(grappleAcceleration, grappleDir);
+	}
+	else {
+	    grappled = false;
+	}
+
 //	Grappled movement
 //	=================
 	if (grappled) {
@@ -85,7 +88,7 @@
 //		If the player is within 5px of the maximum grapple length and not trying to move 
 //		in towards the grapple, conform their movement to take them in a circle.
 //		====================================================================================================
-		if (grappleDistance > maxGrappleLength - 5 && !(vDir < grappleDir + 90 && vDir > grappleDir - 90)) {
+		if (grappleDistance > maxGrappleLength + 5 && !(vDir < grappleDir + 90 && vDir > grappleDir - 90)) {
 			
 //			1. A "reference vector" is created with	length 1 and perpendicular to the grapple direction
 			var xRef = lengthdir_x(1, grappleDir + 90);
@@ -103,16 +106,23 @@
 	} // if
 //	=======	
 	
+//	Accelerate
+//	===========================
+	xVelocity += xAcceleration;
+	yVelocity += yAcceleration;
+//	===========================
+	
 //	Move
 //	===============
 	x += xVelocity;
 	y += yVelocity;
+	acceleration = magnitude(xAcceleration, yAcceleration);
 	velocity = magnitude(xVelocity, yVelocity);
 //	===========================================
 
 //	Correct movement to keep grapple length constant
 //	=====================================================
-	if (grappled && grappleDistance > maxGrappleLength) {
+	if (grappled && grappleDistance > maxGrappleLength + 5) {
 	    x += lengthdir_x(grappleDistance - maxGrappleLength, grappleDir);
 	    y += lengthdir_y(grappleDistance - maxGrappleLength, grappleDir);
 	} // if

@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite5",
-    "path":"sprites/Sprite5/Sprite5.yy",
+    "name":"spr_basicSplatter",
+    "path":"sprites/spr_basicSplatter/spr_basicSplatter.yy",
   },
   "spriteMaskId":null,
   "visible":true,

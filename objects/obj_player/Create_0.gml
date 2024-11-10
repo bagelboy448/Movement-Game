@@ -21,6 +21,7 @@
 	
 	xAcceleration = 0;
 	yAcceleration = 0;
+	acceleration = 0;
 	
 	xVelocity = 0;
 	yVelocity = 0;
@@ -33,9 +34,9 @@
 	grappleX = 0;
 	grappleY = 0;
 	maxGrappleLength = 200;
-	currentGrappleLength = 0;
 	grappleDistance = 0;
 	grappleDir = 0;
+	grappleAcceleration = 20 / mass;
 	
 	debugText = false;
 	recordedVelocity = [];

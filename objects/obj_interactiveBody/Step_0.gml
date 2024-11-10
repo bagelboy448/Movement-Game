@@ -3,6 +3,7 @@
 if (takeDamage) {
 	var inst = instance_create_depth(xCenter, yCenter, depth + 1, obj_groundSplatter);
 	inst.image_xscale = 1 + damageAmount/100;
+	inst.image_yscale = 1 + damageAmount/300;
 	inst.image_angle = damageDir;
 	takeDamage = false;
 	damageAmount = 0;

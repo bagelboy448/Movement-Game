@@ -36,10 +36,10 @@
 		draw_text(100, 500 + 30, velocityS);
 
 		var accelerationS = "acceleration: <" + string(xAcceleration) + ", " + string(yAcceleration) + "> = "
-		+ string(magnitude(xAcceleration, yAcceleration)) + "m/s/s";
+		+ string(acceleration) + "m/s/s";
 		draw_text(x, y + 50, accelerationS);
 		draw_text(100, 500 + 50, accelerationS);
-		
+
 		var graphStartX = 800;
 		var graphStartY = 570;
 		for (var i = 0; i < array_length(recordedVelocity); i++) {
