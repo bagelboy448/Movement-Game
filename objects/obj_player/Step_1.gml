@@ -122,7 +122,7 @@
 
 //	Correct movement to keep grapple length constant
 //	=====================================================
-	if (grappled && grappleDistance > maxGrappleLength + 5) {
+	if (grappled && grappleDistance > maxGrappleLength) {
 	    x += lengthdir_x(grappleDistance - maxGrappleLength, grappleDir);
 	    y += lengthdir_y(grappleDistance - maxGrappleLength, grappleDir);
 	} // if
